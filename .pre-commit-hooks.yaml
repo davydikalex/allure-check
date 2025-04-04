@@ -1,5 +1,5 @@
-- id: check-script
-  name: Allure-check
-  entry: check.py
+- id: allure_check
+  name: allure_check
+  entry: allure_check.py
   language: python
   files: '\.py$'
