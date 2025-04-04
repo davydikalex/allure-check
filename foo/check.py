@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import ast
 import os
 import sys
@@ -90,7 +92,10 @@ class Visitor(ast.NodeVisitor):
         self.generic_visit(node)
 
 
-def main():
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+
     all_errors: list = []
     used_ids: set = set()
 
@@ -110,6 +115,8 @@ def main():
     if any(val["level"] == "error" for val in all_errors):
         sys.exit(1)
 
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
